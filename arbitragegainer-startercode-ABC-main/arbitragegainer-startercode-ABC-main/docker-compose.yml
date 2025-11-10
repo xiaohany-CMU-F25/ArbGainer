@@ -1,0 +1,25 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: ["dotnet", "ArbitrageGainer.dll"]
+    environment:
+      PORT: "8080"
+      MODE: "web"
+      MONGO_URI: "mongodb://mongo:27017/arbitragegainer"
+    ports:
+      - "${APP_PORT:-8082}:8080"
+    depends_on:
+      mongo:
+        condition: service_started
+
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:

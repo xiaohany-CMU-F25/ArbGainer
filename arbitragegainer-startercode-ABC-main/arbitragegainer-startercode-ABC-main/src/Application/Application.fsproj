@@ -1,0 +1,19 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\Infrastructure\Logging\Logger.fs" Link="Logging\Logger.fs" />
+    <Compile Include="MarketDataWorkflow.fs" />
+    <Compile Include="Composition.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Services\Services.fsproj" />
+    <ProjectReference Include="..\Infrastructure\Adapters\Adapters.fsproj" />
+  </ItemGroup>
+
+</Project>

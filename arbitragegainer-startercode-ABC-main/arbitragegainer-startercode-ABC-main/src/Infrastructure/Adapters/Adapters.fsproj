@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="PairNormalization.fs" />
+    <Compile Include="ExchangeClients.fs" />
+    <Compile Include="CrossTradedPairsStore.fs" />
+    <Compile Include="MarketDataRetrival.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Data" Version="6.3.0" />
+    <PackageReference Include="MongoDB.Driver" Version="2.23.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\Core\Model\Model.fsproj" />
+  </ItemGroup>
+
+</Project>
